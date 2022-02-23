@@ -1,14 +1,82 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 
 .App {
-
-}
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   
+  .box-row{
+    display: flex;
+    gap: 2px;
+  }
+  .box {
+    background-color: rgb(232, 232, 232);
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    font-size: 2em;
+    
+    &.blink{
+      animation: blink 1s;
+      animation-iteration-count: infinite;
+      margin-bottom: -2px;
+    }
+    @keyframes blink {
+      0% { border-bottom: 2px solid red; }
+      50% { border-bottom: 0px solid transparent;  }
+      100% { border-bottom: 2px solid red;  }
+    }
+  }
+
+  .gap {
+    margin: 3px;
+  }
+  .grid-container {
+    display: flex;
+    flex-grow: 1.5;
+  }
+  
+  .keyboard-container {
+    font-family: sans-serif;
+    margin-bottom: 50px;
+    > div {
+      display: flex;
+    }
+    span {
+      border: 1px solid black;
+      width: 43px;
+      height: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      text-transform: capitalize;
+      font-weight: 800;
+    }
+  }
+  .grey {
+    background-color: lightgray;
+  }
+  .green {
+    background-color: green;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .centered {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
