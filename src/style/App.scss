@@ -26,14 +26,9 @@ body {
     font-size: 2em;
     
     &.blink{
-      animation: blink 1s;
+      animation: blink 0.7s linear;
       animation-iteration-count: infinite;
       margin-bottom: -2px;
-    }
-    @keyframes blink {
-      0% { border-bottom: 2px solid red; }
-      50% { border-bottom: 0px solid transparent;  }
-      100% { border-bottom: 2px solid red;  }
     }
   }
 
@@ -78,5 +73,20 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-bottom: 2px solid red;
+    background-color: rgb(218, 215, 215);
+  }
+  50% {
+    border-bottom: 2px solid transparent;
+    background-color: rgb(232, 232, 232);
+  }
+  100% {
+    border-bottom: 2px solid red;
+    background-color: rgb(218, 215, 215);
   }
 }
