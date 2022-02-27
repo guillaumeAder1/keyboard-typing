@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/keyboard-typing/static/css/main.efefb322.css",
+    "main.js": "/keyboard-typing/static/js/main.63b22977.js",
+    "static/js/787.0ff855b1.chunk.js": "/keyboard-typing/static/js/787.0ff855b1.chunk.js",
+    "index.html": "/keyboard-typing/index.html",
+    "main.efefb322.css.map": "/keyboard-typing/static/css/main.efefb322.css.map",
+    "main.63b22977.js.map": "/keyboard-typing/static/js/main.63b22977.js.map",
+    "787.0ff855b1.chunk.js.map": "/keyboard-typing/static/js/787.0ff855b1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.efefb322.css",
+    "static/js/main.63b22977.js"
+  ]
+}
