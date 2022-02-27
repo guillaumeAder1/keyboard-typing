@@ -19,10 +19,10 @@ export function useCollectUserInput(currentPhrase, pointer, cb) {
         if (currentPhrase[pointer] === key) cb && cb(key)
     }
     useEffect(() => {
-        console.warn('mounted')
+        // console.warn('mounted')
         window.addEventListener('keydown', fn)
         return () => {
-            console.warn('removed')
+            // console.warn('removed')
             window.removeEventListener('keydown', fn)
         }
     }, [fn])
