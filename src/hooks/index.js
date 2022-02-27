@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react"
+import randomSentence from "random-sentence";
 
 export function generateWords() {
-    // const [value, setValue] = useState('') 
-    // useEffect(() => {
-    //     setValue('this is a random sentence')
-    // }, [])
-    // return value
     console.warn('generateWords')
-    return 'this is a random sentence';
+    return randomSentence({
+        min: 4,
+        max: 6 
+    }).toLocaleLowerCase().replace(/\./g, '');
 }
 
 export function useCollectUserInput(currentPhrase, pointer, cb) {
