@@ -4,9 +4,11 @@ import Keyboard from './components/keyboard';
 import Phrase from './components/phrase';
 import { useState, useCallback, useEffect } from 'react';
 
+const getNewSentence = generateWords()
+
 function App() {
-  const [currentPhrase, setCurrentPhrase] = useState(generateWords())
-  const [currentChar, setCurrentChar] = useState('')
+  const [currentPhrase, setCurrentPhrase] = useState(getNewSentence())
+  const [currentChar] = useState('')
   const [pointer, setPointer] = useState(0) 
   useCollectUserInput(currentPhrase, pointer, key => {
     setPointer(pointer + 1)
@@ -14,10 +16,10 @@ function App() {
   useEffect(() => {
     if (pointer >= currentPhrase.length) {
       console.log('shoudl generate a new word...')
-      setCurrentPhrase(generateWords())
+      setCurrentPhrase(getNewSentence())
       setPointer(0)
     }
-  }, [pointer])
+  })
   return (
     <div className="App">
       <Phrase
