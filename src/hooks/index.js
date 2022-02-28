@@ -17,7 +17,6 @@ const mockGetRandomSentence = () => {
 }
 
 export function generateWords() {
-    console.warn('generateWords')
     return process.env.NODE_ENV === 'production'
         ? () => randomSentence({
             min: 4,
@@ -40,10 +39,8 @@ export function useCollectUserInput(currentPhrase, pointer, cb, errCb) {
         }
     }
     useEffect(() => {
-        // console.warn('mounted')
         window.addEventListener('keydown', fn)
         return () => {
-            // console.warn('removed')
             window.removeEventListener('keydown', fn)
         }
     }, [fn])
