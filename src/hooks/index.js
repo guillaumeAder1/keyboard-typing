@@ -28,13 +28,17 @@ export function generateWords() {
     
 }
 
-export function useCollectUserInput(currentPhrase, pointer, cb) {
+export function useCollectUserInput(currentPhrase, pointer, cb, errCb) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz '
     const fn = e => {
         const { key, keyCode } = e
         if (key.length > 1) return
         if (!alphabet.includes(key)) return
-        if (currentPhrase[pointer] === key) cb && cb(key)
+        if (currentPhrase[pointer] === key) {
+            cb && cb()
+        } else {
+            errCb && errCb(key)
+        }
     }
     useEffect(() => {
         // console.warn('mounted')
