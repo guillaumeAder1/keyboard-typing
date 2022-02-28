@@ -62,7 +62,33 @@ body {
     }
   }
   .red {
-    background-color: red;
+    &-9{
+      background-color: #ff3030;
+    }
+    &-8{
+      background-color: #ff4e48;
+    }
+    &-7{
+      background-color: #ff675f;
+    }
+    &-6{
+      background-color: #ff7d76;
+    }
+    &-5{
+      background-color: #ff918c;
+    }
+    &-4{
+      background-color: #ffa5a2;
+    }
+    &-3{
+      background-color: #ffb9b7;
+    }
+    &-2{
+      background-color: #ffcccb;
+    }
+    &-1{
+      background-color: #ffeeee;
+    }
   }
   .grey {
     background-color: lightgray;

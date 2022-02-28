@@ -17,6 +17,7 @@ function App() {
     () => { setPointer(pointer + 1) },
     key => {
       if (errors[key]) {
+        if (errors[key] === 9) return;
         errors[key]++;
         setErrors({ ...errors })
       }

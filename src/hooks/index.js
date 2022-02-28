@@ -11,7 +11,6 @@ const mockGetRandomSentence = () => {
         'asd'
     ]
     return () => {
-        console.warn('list', list)
         list.reverse();
         return list[0]
     }
@@ -37,7 +36,7 @@ export function useCollectUserInput(currentPhrase, pointer, cb, errCb) {
         if (currentPhrase[pointer] === key) {
             cb && cb()
         } else {
-            errCb && errCb(key)
+            errCb && errCb(currentPhrase[pointer])
         }
     }
     useEffect(() => {
