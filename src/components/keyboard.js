@@ -3,7 +3,11 @@ export default function Keyboard ({ errors }) {
     const qwerty = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
     const asdf = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
     const zxcv = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
-    const getClass = char => errors[char] ? `red-${errors[char]}` : ''
+    const getClass = char => {
+        if (!errors[char]) return '';
+        if (errors[char] > 0) return `red-${errors[char]}`;
+        return `green-${Math.abs(errors[char])}`; 
+    }
     return (
         <div className="keyboard-container centered">
             <div role="row">

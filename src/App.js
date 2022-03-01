@@ -14,9 +14,20 @@ function App() {
   useCollectUserInput(
     currentPhrase,
     pointer,
-    () => { setPointer(pointer + 1) },
     key => {
-      if (errors[key]) {
+      setPointer(pointer + 1)
+      if (errors[key] !== undefined && errors[key] !== null) {
+        if (errors[key] === -9) return;
+        errors[key]--;
+        setErrors({ ...errors })
+      }
+      else {
+        errors[key] = -1
+        setErrors({ ...errors })
+      }
+    },
+    key => {
+      if (errors[key] !== undefined && errors[key] !== null) {
         if (errors[key] === 9) return;
         errors[key]++;
         setErrors({ ...errors })

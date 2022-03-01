@@ -90,11 +90,35 @@ body {
       background-color: #ffeeee;
     }
   }
-  .grey {
-    background-color: lightgray;
-  }
   .green {
-    background-color: green;
+    &-1{
+      background-color: #f1f6e7;
+    }
+    &-2{
+      background-color: #d9e4c9;
+    }
+    &-3{
+      background-color: #c1d2ac;
+    }
+    &-4{
+      background-color: #a8c190;
+    }
+    &-5{
+      background-color: #8eb075;
+    }
+    &-6{
+      background-color: #739f5c;
+    }
+    &-7{
+      background-color: #578f43;
+    }
+    &-8{
+      background-color: #377e2a;
+    }
+    &-9{
+      background-color: #036e0f;
+    }
+
   }
   .yellow {
     background-color: yellow;

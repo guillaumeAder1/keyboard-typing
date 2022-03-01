@@ -33,7 +33,7 @@ export function useCollectUserInput(currentPhrase, pointer, cb, errCb) {
         if (key.length > 1) return
         if (!alphabet.includes(key)) return
         if (currentPhrase[pointer] === key) {
-            cb && cb()
+            cb && cb(currentPhrase[pointer])
         } else {
             errCb && errCb(currentPhrase[pointer])
         }

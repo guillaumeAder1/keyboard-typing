@@ -2,13 +2,14 @@ import { render, screen, getByRole, fireEvent } from '@testing-library/react';
 import App from '../App';
 
 
-let phraseContainer;
-beforeEach(() => {
-  render(<App />)
-  phraseContainer = document.querySelector('.grid-container')
-})
+let phraseContainer, keyboardContainer;
 
 describe('render app', () => {
+  beforeEach(() => {
+    render(<App />)
+    phraseContainer = document.querySelector('.grid-container')
+    keyboardContainer = document.querySelector('.keyboard-container')
+  })
   test('should renders basic app with "ASD" phrase by defaultm and first char should be blinking', () => {
     const init = getByRole(phraseContainer, 'cell', { name: 'a' })
     getByRole(phraseContainer, 'cell', { name: 's' })
@@ -31,4 +32,22 @@ describe('render app', () => {
     expect(getByRole(phraseContainer, 'cell', { name: 't' })).toHaveClass('blink')
     expect(getByRole(phraseContainer, 'cell', { name: 'r' })).not.toHaveClass('blink')
   });
+  test('should add red color if typing wrong letter', () => {
+    expect(getByRole(keyboardContainer, 'cell', { name: 't' }).className).toEqual(expect.stringContaining('gap'))
+    fireEvent.keyDown(window, { key: 'r' })
+    expect(getByRole(keyboardContainer, 'cell', { name: 't' }).className).toEqual(expect.stringContaining('red-1'))
+    fireEvent.keyDown(window, { key: 'k' })
+    expect(getByRole(keyboardContainer, 'cell', { name: 't' }).className).toEqual(expect.stringContaining('red-2'))
+    fireEvent.keyDown(window, { key: 'o' })
+    expect(getByRole(keyboardContainer, 'cell', { name: 't' }).className).toEqual(expect.stringContaining('red-3'))
+  })
+  test('should add green color if typing correct letter', () => {
+    expect(getByRole(keyboardContainer, 'cell', { name: 't' }).className).toEqual(expect.stringContaining('gap'))
+    fireEvent.keyDown(window, { key: 't' })
+    expect(getByRole(keyboardContainer, 'cell', { name: 't' }).className).toEqual(expect.stringContaining('green-1'))
+    fireEvent.keyDown(window, { key: 'r' })
+    expect(getByRole(keyboardContainer, 'cell', { name: 'r' }).className).toEqual(expect.stringContaining('green-1'))
+    fireEvent.keyDown(window, { key: 'e' })
+    expect(getByRole(keyboardContainer, 'cell', { name: 'e' }).className).toEqual(expect.stringContaining('green-1'))
+  })
 })
