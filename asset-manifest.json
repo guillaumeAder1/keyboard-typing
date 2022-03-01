@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/keyboard-typing/static/css/main.0024dae7.css",
-    "main.js": "/keyboard-typing/static/js/main.9e3c5605.js",
+    "main.css": "/keyboard-typing/static/css/main.7babeb8b.css",
+    "main.js": "/keyboard-typing/static/js/main.6883dd49.js",
     "static/js/787.0ff855b1.chunk.js": "/keyboard-typing/static/js/787.0ff855b1.chunk.js",
     "index.html": "/keyboard-typing/index.html",
-    "main.0024dae7.css.map": "/keyboard-typing/static/css/main.0024dae7.css.map",
-    "main.9e3c5605.js.map": "/keyboard-typing/static/js/main.9e3c5605.js.map",
+    "main.7babeb8b.css.map": "/keyboard-typing/static/css/main.7babeb8b.css.map",
+    "main.6883dd49.js.map": "/keyboard-typing/static/js/main.6883dd49.js.map",
     "787.0ff855b1.chunk.js.map": "/keyboard-typing/static/js/787.0ff855b1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0024dae7.css",
-    "static/js/main.9e3c5605.js"
+    "static/css/main.7babeb8b.css",
+    "static/js/main.6883dd49.js"
   ]
 }
